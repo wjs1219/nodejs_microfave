@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  .row
+    .col-md-7
+      p Welcome to Microfave!
+    .col-md-5.well
+      p(style='color: red;')= message
+
+      form(action='/register', method='post').form-horizontal
+        .form-group
+          label.col-sm-4 Email
+          .col-sm-7
+            input(type='email', name='email', placeholder='Enter email').form-control
+        .form-group
+          label.col-sm-4 Username
+          .col-sm-7
+            input(type='text', name='username', placeholder='Enter username').form-control
+        .form-group
+          label.col-sm-4 Name
+          .col-sm-7
+            input(type='text', name='name', placeholder='Enter name (optional)').form-control
+        .form-group
+          label.col-sm-4 Location
+          .col-sm-7
+            input(type='text', name='location', placeholder='Enter location(optional)').form-control
+        .form-group
+          label.col-sm-4 Date of Birth
+          .col-sm-7
+            input(type='date', name='dob', placeholder='Enter birthdate(optional)').form-control
+        .form-group
+          label.col-sm-4 Password
+          .col-sm-7
+            input(type='password', name='password', placeholder='Enter password').form-control
+        .form-group
+          label.col-sm-4 Confirm Password
+          .col-sm-7
+            input(type='password', name='pw_confirm', placeholder='Re-enter password').form-control
+          .form-group
+            .col-sm-offset-4.col-sm-10
+              button(type='submit').btn.btn-default Sign up

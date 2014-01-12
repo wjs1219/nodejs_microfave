@@ -1,0 +1,15 @@
+var mysqltime = require('../utils/mysqltime');
+
+exports.post_post = function(database) {
+  return function (req, res) {
+    var item = req.body.item;
+    var category = req.body.category;
+    var post = req.body.post;
+    
+
+    var mysqldate = '';
+    mysqltime.datetime(function (time) {
+      mysqldate = time;
+    });
+  }
+}

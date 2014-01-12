@@ -1,0 +1,21 @@
+var site = require('./routes/site');
+var auth = require('./routes/auth');
+var home = require('./routes/home');
+var post = require('./routes/post');
+
+module.exports = function(app, database) {
+  app.get('*', function(req, res, next) {
+    if (req.session.user) {
+      // make user visible in jade templates
+      res.locals.user = req.session.user || null;      
+    }
+    next();
+  });
+
+  app.get('/', site.index);
+  app.post('/login', auth.post_login(database)); 
+  app.post('/register', auth.post_register(database));
+  app.get('/home', home.index);
+
+  app.post('/post', post.post_post(database));
+}

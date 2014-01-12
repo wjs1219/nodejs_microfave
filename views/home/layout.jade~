@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+  head
+    title Microfave!
+
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/custom.css')
+  body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          a(href='#').navbar-brand Microfave!
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='/logout') Logout
+    
+    .jumbotron
+      .container
+        block header
+    
+    .container
+      block content
+    .container
+      hr
+      footer
+        p Microfave beta verson 0.0.1

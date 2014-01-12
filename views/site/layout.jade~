@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    title Microfave!
+
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/custom.css')
+  body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          a(href='#').navbar-brand Microfave!
+        .navbar-collapse.collapse
+          form.navbar-form.navbar-right
+            .form-group
+              input(type='text', placeholder='Email', name='email').form-control
+            div(style='margin-left:5px;').form-group
+              input(type='password', placeholder='Password', name='password').form-control
+            button(type='submit', style='margin-left: 5px;').btn.btn-success Sign in
+    .container
+      block content
+
+    .container
+      hr
+      footer
+        p Microfave beta version 0.0.1

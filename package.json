@@ -1,0 +1,10 @@
+{
+	"name": "microfave",
+	"version": "0.0.1",
+	"description": "reviews and affiliate site",
+	"dependencies": {
+		"express": "*",
+		"jade": "*",
+		"mysql": "*"
+	}
+}
