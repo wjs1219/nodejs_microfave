@@ -19,7 +19,7 @@ exports.post_login = function(database) {
           req.session.user = result[0];
           return res.redirect('/home');
          } else {
-            return res.redirect('/');
+            return res.render('site/index', { loginError: 'Username and password combination is not valid' });
         }
       });
     } else {

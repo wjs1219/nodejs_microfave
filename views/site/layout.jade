@@ -11,13 +11,14 @@ html(lang='en')
         .navbar-header
           a(href='#').navbar-brand Microfave!
         .navbar-collapse.collapse
-          form.navbar-form.navbar-right
+          form(action='/login', method='post').navbar-form.navbar-right
             .form-group
               input(type='text', placeholder='Email', name='email').form-control
             div(style='margin-left:5px;').form-group
               input(type='password', placeholder='Password', name='password').form-control
             button(type='submit', style='margin-left: 5px;').btn.btn-success Sign in
     .container.content
+      p(style='color: red;')= loginError
       block content
 
     .container

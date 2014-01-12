@@ -4,7 +4,7 @@ var mysqltime = require('../utils/mysqltime');
 exports.post_login = function(database) {
   return function (req, res) {
     var email = req.body.email;
-     var password = req.body.password;
+    var password = req.body.password;
 
     if (email && password) {
       password = crypto.createHash('md5').update(password).digest('hex');
@@ -19,7 +19,7 @@ exports.post_login = function(database) {
           req.session.user = result[0];
           return res.redirect('/home');
          } else {
-            return res.redirect('/');
+            return res.render('site/index', { message: 'Username or password is not valid' });
         }
       });
     } else {
