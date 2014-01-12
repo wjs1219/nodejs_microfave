@@ -5,12 +5,11 @@ block header
   .col-md-6
     p(style='color:red')= message
 
-
-    form(action='/post', method='post')
+    form(action='/fave', method='post')
       input(name='item', placeholder="What's your current obsession?")
       select(name='category', style='float:right;')
         option(value="", disabled, selected, style='font-style:italic;') What is it?
         option(value='Music') Music
         option(value='Book') Book
-      textarea(rows='3', name='post', placeholder='Tell us about it!', style='margin-top:5px;').form-control
+      textarea(rows='3', name='text', placeholder='Tell us about it!', style='margin-top:5px;').form-control
       button(type='submit', style='float:right; margin-top:10px;').btn.btn-primary Post

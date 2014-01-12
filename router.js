@@ -1,6 +1,7 @@
 var site = require('./routes/site');
 var auth = require('./routes/auth');
 var home = require('./routes/home');
+var fave = require('./routes/fave');
 
 module.exports = function(app, database) {
   app.get('*', function(req, res, next) {
@@ -15,4 +16,6 @@ module.exports = function(app, database) {
   app.post('/login', auth.post_login(database)); 
   app.post('/register', auth.post_register(database));
   app.get('/home', home.index);
+
+  app.post('/fave', fave.post_fave(database));
 }
